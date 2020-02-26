@@ -15,4 +15,8 @@ class Turma extends Model
     protected $table = 'turma';
 
     public $timestamps = false;
+
+    public function alunos(){
+        return $this->hasMany('App\Models\Aluno', 'turma', 'id');
+    }
 }

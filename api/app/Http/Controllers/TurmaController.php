@@ -20,10 +20,9 @@ class TurmaController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-        'nome_vendedor' => 'required',
-        'nome_contato'  => 'required',
-        'email'         => 'required',
-        'telefone'      => 'required',
+      'nome'  => 'required',
+      'serie' => 'required',
+      'curso' => 'required',
     ]);
 
     $turma        = new Contato;
@@ -50,10 +49,9 @@ class TurmaController extends Controller
   public function update(Request $request, $id)
   {
     $this->validate($request, [
-      'nome_vendedor' => 'required',
-      'nome_contato'  => 'required',
-      'email'         => 'required',
-      'telefone'      => 'required',
+      'nome'  => 'required',
+      'serie' => 'required',
+      'curso' => 'required',
     ]);
 
     $turma        = new Contato;
