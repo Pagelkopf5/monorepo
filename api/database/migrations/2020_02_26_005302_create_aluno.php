@@ -17,9 +17,8 @@ class CreateAluno extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('sexo');
-            $table->timestamps('data_nascimento');
-            $table->integer('turma_id');
-            $table->timestamps();
+            $table->string('data_nascimento');
+            $table->integer('turma_id')->nullable();
         });
     }
 

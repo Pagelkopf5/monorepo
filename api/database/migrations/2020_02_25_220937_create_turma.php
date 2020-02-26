@@ -18,7 +18,6 @@ class CreateTurma extends Migration
             $table->string('nome');
             $table->string('serie');
             $table->integer('curso');
-            $table->timestamps();
         });
     }
 
