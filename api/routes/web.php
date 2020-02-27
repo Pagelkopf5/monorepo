@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Turma;
+use App\Models\Aluno;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +54,17 @@ Route::get('/delete_turma/{id}', function ($id) {
 })->name('turma.delete');
 
 
-Route::resource('aluno', 'AlunoController');
+Route::resource('aluno', 'AlunoController', ['names' => [
+    'index' => 'aluno.index',
+    'create' => 'aluno.create',
+    'store' => 'aluno.store',
+    'edit' => 'aluno.edit',
+    'update' => 'aluno.update',
+]]);
+
+Route::get('/delete_aluno/{id}', function ($id) {
+    $aluno = Aluno::findOrFail($id);
+    $aluno->delete();
+
+    return redirect()->route('aluno.index');
+})->name('aluno.delete');
