@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Turma;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +18,6 @@ class Aluno extends Model
     public $timestamps = false;
 
     public function turma(){
-      return $this->belongsTo('App\Models\Turma', 'id', 'turma_id');
+      return $this->belongsTo('App\Models\Turma', 'turma_id', 'id');
   }
 }
