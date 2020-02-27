@@ -7,8 +7,8 @@ Aluno: Nome, sexo, data_nascimento, turma;
 Regras
 (v) Cada turma possui um nome de identificação (Ex: Turma Abelhinha, 1ª série, Curso de informática, etc.);
 (v) Cada pessoa possui nome, sexo e data de nascimento;
-( ) Uma mesma pessoa pode estar inscrita em somente uma turma;
-( ) Uma pessoa só pode estar inscrita uma única vez em cada turma;
+(v) Uma mesma pessoa pode estar inscrita em somente uma turma;
+(v) Uma pessoa só pode estar inscrita uma única vez em cada turma;
 
 Recursos esperados
 ( ) Listagem de turmas;
