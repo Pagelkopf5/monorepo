@@ -17,7 +17,7 @@ class CreateTurma extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('serie');
-            $table->integer('curso');
+            $table->string('curso');
         });
     }
 

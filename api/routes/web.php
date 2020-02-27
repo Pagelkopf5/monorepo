@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Turma;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,36 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('turma', 'TurmaController');
+Route::resource('turma', 'TurmaController', ['names' => [
+    'index' => 'turma.index',
+    'create' => 'turma.create',
+    'store' => 'turma.store',
+    'edit' => 'turma.edit',
+    'update' => 'turma.update',
+]]);
 
-Route::resource('turma', 'AlunoController');
+Route::put('/edit_turma/{id}', function ($id, $request) {
+    $this->validate($request, [
+        'nome'  => 'required',
+        'serie' => 'required',
+        'curso' => 'required',
+      ]);
+  
+      $turma        = new Turma;
+      $turma->nome  = $request->nome;
+      $turma->serie = $request->serie;
+      $turma->curso = $request->curso;
+      $turma->save();
+  
+      return redirect()->route('turma.index');
+})->name('turma.editar');
+
+Route::get('/delete_turma/{id}', function ($id) {
+    $turma = Turma::findOrFail($id);
+    $turma->delete();
+
+    return redirect()->route('turma.index');
+})->name('turma.delete');
+
+
+Route::resource('aluno', 'AlunoController');

@@ -16,10 +16,5 @@ class TurmaTableSeeder extends Seeder
             'serie' => '1º serie',
             'curso' => 'Curso de informatica',
         ]);
-        DB::table('turma')->insert([
-            'nome' => 'Joao Doe',
-            'sexo' => 'M',
-            'data_nascimento' => '02/12/1997',
-        ]);
     }
 }
